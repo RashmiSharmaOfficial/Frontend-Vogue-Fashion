@@ -1,0 +1,199 @@
+<div class="setContainer">
+  <div class="container">
+    <video src="../../../assets/banner.mp4" autoplay loop style="width: 1300px; height: 300px;"></video>
+    <!-- <video src="../../assets/banner.mp4" autoplay loop></video> -->
+    <h1 class="text-center mt-5">
+      OUR &nbsp; BESTSELLER &nbsp;PRODUCTS
+    </h1>
+    <div class="row mt-5">
+      <div class="col-3">
+
+        <div class="row">
+          <div class="col-7">
+            <h1 class="mt-3">Filter</h1>
+          </div>
+          <div class="col-5">
+            <!-- <button class="btn mt-3" (click)="unfilter()"
+              style="color: brown; font-weight: 600; text-decoration: underline;">RESET ALL</button> -->
+          </div>
+        </div>
+
+        <hr>
+        <!-- <h2>Gender</h2> -->
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                Gender
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <input type="checkbox" name="male" id="male" value="men" (change)="onchange('gender', $event)"> Men
+                <br>
+                <input type="checkbox" name="female" id="female" value="women" (change)="onchange('gender', $event)"> Women
+                <br>
+
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Brand
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <input type="checkbox" name="Allen" id="allen" value="ALLEN SOLLY" (change)="onchange('brand', $event)"> ALLEN SOLLY
+                <br>
+                <input type="checkbox" name="Allen" id="allen" value="LIFE" (change)="onchange('brand', $event)"> LIFE
+                <br>
+                <input type="checkbox" name="Allen" id="allen" value="YURIS" (change)="onchange('brand', $event)"> YURIS
+                <br>
+                <input type="checkbox" name="Allen" id="allen" value="INFUSE" (change)="onchange('brand', $event)"> INFUSE
+                <br>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+      </div>
+      <div class="col-9">
+        <div class="row">
+          <div class="col-4" *ngFor="let item of proData; ">
+            <div class="card m-5" style="width: 18rem;">
+              <a>
+                <img [src]=item.img1 class="card-img-top" alt="...">
+                <img [src]=item.img2 class="card-img-top" alt="">
+              </a>
+              <div class="row">
+                <div class="col-6 common">
+                  <button class="btn ms-5" (click)="addToWishlist(item.img1, item.name, item.price)" *ngIf="isUser == 'true'">
+
+                    <i class="far fa-heart" style="cursor: pointer;"></i>
+
+                  </button>
+                </div>
+                <div class="col-6 text-right common">
+                  <button class="btn ms-5" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    *ngIf="isUser == 'false'"><i class="fas fa-shopping-cart"></i></button>
+                  <button class="btn ms-5" data-bs-toggle="modal" data-bs-target="#cartModal" *ngIf="isUser == 'true'"
+                    (click)="addToCart(1, item.productId, item.img1, item.name, item.price)"><i
+                      class="fas fa-shopping-cart"></i></button>
+                </div>
+              </div>
+
+              <div class="card-body">
+                <h3 class="text-center m-0">{{item.brand}}</h3>
+                <h4 class="text-center">{{item.name}}</h4>
+                <div class="row">
+                  <div class="col-3 price p-0">{{item.price}}</div>
+                  <div class="col-4 aprice">{{item.aprice}}</div>
+                  <div class="col-5 discount">({{item.dprice}}) <i class="fas fa-tag"></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <div class="row">
+          <img src=" https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-30-12-20-59-11.gif" alt="">
+        </div>
+
+        <h1 class="text-center">Please Login to add items to your cart!</h1>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body" *ngIf="cartData.length == 0">
+        <div class="row">
+          <img src="https://assets.materialup.com/uploads/87d4df96-a55f-4f4b-9a17-a696eded97f3/preview.gif" alt="">
+        </div>
+        <h2 class="card-text text-center">
+        Cart-er says you don't have any products added. Start adding to make me happy!
+        </h2>
+        <div class="row text-center">
+          <button type="button" class="btn btn-info" data-bs-dismiss="modal">Add Now</button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="card mb-3" *ngFor="let item of cartData">
+          <div class="row">
+            <div class="col-5">
+              <div class="row">
+                <img [src]="item.img">
+              </div>
+            </div>
+            <div class="col-7">
+              <div class="row">
+                <div class="col-12">
+                  <h2 class="card-title text-center mt-5">{{item.name}}</h2>
+                </div>
+                <div class="col-12 text-center mt-2">
+                  <button class="btn btn-info"
+                    (click)="addToCart(1, item.productId, item.img, item.name, item.price)">+</button>
+                  <button class="btn btn-info">{{item.qty}}</button>
+                  <button class="btn btn-info"
+                    (click)="addToCart(-1, item.productId, item.img, item.name, item.price)">-</button>
+
+                </div>
+                <div class="col-12">
+                  <h4 class="card-title text-center mt-5">{{item.price}}&nbsp; only</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row"  *ngIf="cartData.length>0">
+          <div class="col-3">
+            <h2 class="mt-1 text-center">Total Price</h2>
+          </div>
+          <div class="col-3">
+            <h2 class="mt-1 text-left">{{totalPrice| currency:'INR'}}</h2>
+          </div>
+          <div class="col-3">
+            <button id="closeBtn" type="button" class="btn btn-success" data-bs-dismiss="modal">Add more</button>
+          </div>
+          <div class="col-3">
+              <button id="orderBtn" class="btn btn-info" (click)="buynow()">BUY NOW</button>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+

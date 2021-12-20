@@ -1,0 +1,75 @@
+.setcontainer {
+  /* border: 1px solid; */
+  background-color: #f1f1f1;
+  height: 100vh;
+  min-width: 100%;
+}
+
+.carousel1 {
+  max-width: 100%;
+  /* margin-left: -12px;
+  margin-right: -2px; */
+  margin-top: 76px;
+}
+
+.card {
+  background-color: #e2e2e2;
+  margin-top: 40px;
+}
+
+.card1 {
+  font-family: "Open Sans", sans-serif;
+}
+
+.carousel h1,
+.card1 h1,
+.card3 h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #3e4152;
+}
+
+a img {
+  width: 675px;
+}
+
+a img:last-child {
+  display: none;
+}
+a button {
+  display: none;
+}
+a:hover img:last-child {
+  display: block;
+}
+a:hover img:first-child {
+  display: none;
+}
+
+.card2 .card {
+  margin: 10px;
+}
+
+.card-text {
+  text-align: left;
+  width: 100%;
+  margin: 5% 11%;
+  position: absolute;
+  /* z-index: 999; */
+  bottom: 0;
+  color: white;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+
+.card3 {
+  margin-top: 1000px;
+}
+
+.card1 .card:hover,
+.card3 .card:hover {
+  transform: scale(1.1);
+}

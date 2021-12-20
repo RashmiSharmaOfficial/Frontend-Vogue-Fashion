@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Pacifico&family=Passions+Conflict&display=swap");
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/*
+font-family: 'Pacifico', cursive;
+font-family: 'Passions Conflict', cursive;
+font-family: 'Open Sans', sans-serif;
+*/
+nav {
+  /* background-color: rgba(255, 255, 255, 0.808); */
+  background-color: rgb(122, 24, 65);
+  box-shadow: 0 0 5px 0 rgb(0 0 0 / 60%);
+}
+
+.navbar-light .navbar-nav .dropdown {
+  /* color: black; */
+  color: rgb(224, 224, 224);
+  font-family: "Open Sans", sans-serif;
+  margin-top: 12px;
+  font-size: 16px;
+}
+.navbar-light .navbar-nav .tag .nav-link {
+  color: rgb(224, 224, 224);
+  /* color: black; */
+  font-family: "Open Sans", sans-serif;
+  margin-top: 18px;
+  font-size: 19px;
+}
+
+.nav-link span {
+  /* border: 1px solid; */
+  font-family: "Passions Conflict", cursive;
+  font-size: 60px;
+  font-weight: 500;
+  /* color: brown; */
+  color: white;
+  margin-top: 12px;
+}
+
+.dropdown-menu.show {
+  margin-top: 3px;
+  background: rgba(165, 42, 42, 0.877);
+}
+.nav-item .dropdown button {
+  font-size: 19px;
+  margin-top: -7px;
+}
+
+.dropdown-item {
+  color: white;
+  padding: 3px;
+}
+.dropdown-item:hover {
+  color: black;
+}

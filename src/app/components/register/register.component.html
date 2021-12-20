@@ -1,0 +1,80 @@
+<html>
+
+<body>
+  <div class="container">
+    <div class="row mt-5 mb-5">
+      <div class="col-md-6 mt-5 mb-5">
+        <div class="card">
+          <div class="text-center">
+            <h1 style="font-weight: 700; font-size: 30px;">MY VOGUE</h1>
+            <hr>
+          </div>
+
+          <form [formGroup]="signupForm" (ngSubmit)="signUp()" method="post" enctype="multipart/form-data">
+
+            <div>
+              <mat-form-field appearance="fill">
+                <mat-label>Salutation</mat-label>
+                <mat-select formControlName="userSalutation">
+                  <mat-option *ngFor="let item of salute" [value]="item.value">
+                    {{item.viewValue}}
+                  </mat-option>
+                </mat-select>
+                <span class="text-danger" *ngIf="signupForm.controls['userSalutation'].dirty && signupForm.get('userSalutation')?.errors?.required">
+                  Salutation is required!
+                </span>
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Username</mat-label>
+                <input formControlName="userName" matInput placeholder="Ex. George Mason">
+                <span class="text-danger" *ngIf="signupForm.controls['userName'].dirty && signupForm.get('userName')?.errors?.required">
+                  Username is required!
+                </span>
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="fill">
+                <mat-label>Birthdate</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="userDob">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Email Address</mat-label>
+                <input formControlName="userEmail" matInput placeholder="Ex. xyz@gmail.com">
+                <span class="text-danger" *ngIf="signupForm.controls['userEmail'].dirty && signupForm.get('userEmail')?.errors?.required">
+                  Email is required!
+                </span>
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input formControlName="userPassword" type="password" matInput placeholder="Ex. password">
+                <span class="text-danger" *ngIf="signupForm.controls['userPassword'].dirty && signupForm.get('userPassword')?.errors?.required">
+                  Password is required!
+                </span>
+              </mat-form-field>
+
+            </div>
+            <button mat-button color="" [disabled]="!signupForm.valid" >Register</button>&nbsp;&nbsp;&nbsp;
+            <a [routerLink]="['/login']" routerLinkActive="router-link-active">Already a user? login here!</a>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6 mt-5 mb-5">
+        <img src="https://prodstatic.shoppersstop.com/_ui/responsive/common/assets/images/signUpBg.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

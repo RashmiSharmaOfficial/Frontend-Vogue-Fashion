@@ -1,0 +1,82 @@
+<div class="setContainer">
+  <br><br><br>
+
+    <h1 class="text-center mt-5">CHECKOUT PAGE</h1>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-4" *ngFor="let item of cartData">
+        <div class="card mb-3">
+          <div class="row">
+            <div class="col-5">
+              <div class="row">
+                <img [src]="item.img">
+              </div>
+            </div>
+            <div class="col-7">
+              <div class="row">
+                <div class="col-12">
+                  <h2 class="card-title text-center mt-5">{{item.name}}</h2>
+                </div>
+                <div class="col-12 text-center">
+                  <h2 class="card-title text-center mt-1">Quantity: {{item.qty}}</h2>
+                </div>
+                <div class="col-12">
+                  <h4 class="card-title text-center">{{item.price}}&nbsp; only</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-6">
+        <h2 class="mt-1 text-center">Total Price</h2>
+      </div>
+      <div class="col-6">
+        <h2 class="mt-1 text-left">{{totalPrice| currency:'INR'}}</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <h2 class="mt-5">Please do the Payment here</h2>
+
+    <form class="mb-5" novalidate (ngSubmit)="buy()" [formGroup]="stripeForm">
+
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName="name" placeholder="Full Name*" id="name" name="name" required>
+        <span class="text-danger" *ngIf="stripeForm.get('name')?.errors?.required  && submitted">
+        Full name is required
+        </span>
+      </div>
+
+      <div class="form-group" style="visibility: hidden;">
+        <input type="text" class="form-control" formControlName="amount" placeholder="Amount*" required>
+        <span class="text-danger" *ngIf="stripeForm.get('amount')?.errors?.required && submitted">
+          Amount is required
+        </span>
+      </div>
+
+
+      <div class="card p-3">
+        <div class="form-group">
+          <div id="stripeCard" class="field"></div>
+        </div>
+      </div>
+
+
+      <button class="btn btn-warning mt-3" type="submit">
+        BUY
+      </button>
+
+
+    </form>
+  </div>
+</div>
+<br><br><br>
+

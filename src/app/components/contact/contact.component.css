@@ -1,0 +1,49 @@
+.setContainer {
+  /* border: 1px solid; */
+  margin-top: 130px;
+  height: 100vh;
+  min-width: 100%;
+  font-family: "Open Sans", sans-serif;
+}
+
+.setContainer h1 {
+  font-size: 35px;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+}
+
+.card {
+  font-size: 1rem;
+  background: linear-gradient(110deg, rgb(255, 159, 68), rgb(255, 72, 72));
+}
+
+.card h1 {
+  font-size: 25px;
+  text-transform: uppercase;
+
+  font-weight: 700;
+}
+
+button {
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: black;
+  background-color: white;
+  border: none;
+  border-radius: 0;
+  margin: 10px;
+}
+
+button:hover {
+  background-color: rgb(240, 240, 240);
+  transform: scale(0.9);
+}
+
+button:focus,
+textarea:focus,
+input:focus {
+  outline: none;
+  box-shadow: none;
+}

@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row mt-5">
+
+    <!-- login section -->
+    <div class="col-md-6 mt-5">
+      <div class="card p-5" style="margin-right: 90px;">
+        <div class="text-center">
+          <h1>LOGIN</h1>
+          <hr>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="mb-3">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Email Address</mat-label>
+              <input formControlName="email" matInput placeholder="Ex. xyz@gmail.com">
+              <span class="text-danger"
+                *ngIf="loginForm.controls['email'].dirty && loginForm.get('email')?.errors?.required">
+                Email is required!
+              </span>
+            </mat-form-field>
+          </div>
+
+          <div class="mb-3">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Password</mat-label>
+              <input formControlName="password" type="password" matInput placeholder="Ex. password">
+              <span class="text-danger"
+                *ngIf="loginForm.controls['password'].dirty && loginForm.get('password')?.errors?.required">
+                Password is required!
+              </span>
+            </mat-form-field>
+
+          </div>
+
+          <button mat-button class="btn btn-primary" [disabled]="!loginForm.valid">LOGIN</button>
+          &nbsp;&nbsp;&nbsp;
+          <a [routerLink]="['/register']" routerLinkActive="router-link-active">New user? register here!</a><br><br>
+          <a class="centered" href="http://localhost:8000/forgotPassword">Forgot your password?</a>
+        </form>
+      </div>
+    </div>
+
+    <!-- create an account section -->
+    <div class="col-md-6 mt-3">
+      <div class="card p-5 card2">
+        <div class="text-center mb-5">
+          <h1>CREATE AN ACCOUNT</h1>
+          <hr>
+        </div>
+        <div class="content">
+          <p>Create an account to enjoy all the benefits of our registered customers.</p>
+          <br>
+          <p><i class="far fa-heart"></i> &nbsp; Save your favourites across devices</p>
+          <p><i class="fas fa-shopping-basket"></i> &nbsp; Save time at checkout for future orders</p>
+          <p><i class="fas fa-map-marker-alt"></i> &nbsp; Manage your purchases and returns in your order history</p>
+          <p><i class="far fa-star"></i> &nbsp; Become a <span style="text-decoration: underline;">
+              VOGUE FASHION EXPERIENCE</span> member to profit from special offers</p>
+        </div>
+        <br>
+        <button mat-button class="btn btn-primary" style="width: 40%;"><a [routerLink]="['/register']"
+            routerLinkActive="router-link-active" style="text-decoration: none; color: white;">REGISTER NOW</a></button>
+      </div>
+    </div>
+  </div>
+</div>

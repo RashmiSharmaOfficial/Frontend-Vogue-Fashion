@@ -1,0 +1,59 @@
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  margin-top: -50px;
+  /* height: 100%; */
+  min-width: 100%;
+  background: linear-gradient(130deg, rgb(246, 217, 222), rgb(240, 234, 204));
+}
+
+.container .row {
+  margin-top: 700px;
+}
+
+.card {
+  margin-top: 69px;
+  padding: 19px;
+  margin-right: -23px;
+  margin-left: 230px;
+  /* border-radius: 27px; */
+  box-shadow: 0 0 12px 0 rgb(0 0 0 / 10%);
+  font-size: 1.2rem;
+}
+
+img {
+  margin-top: 70px;
+  /* height: 700px; */
+}
+input,
+select {
+  /* border-radius: 20px; */
+  width: 100%;
+  box-shadow: 0 0 12px 0 rgb(0 0 0 / 10%);
+}
+
+button {
+  font-size: 1.2rem;
+  /* border-radius: 20px; */
+  box-shadow: 0 0 12px 0 rgb(0 0 0 / 10%);
+}
+
+mat-form-field {
+  width: 450px;
+  padding: -2px;
+}
+
+mat-form-field input {
+  height: 26px;
+}
+
+button {
+  color: white;
+  background: linear-gradient(110deg, rgb(255, 123, 0), red);
+}
+
+a {
+  color: brown;
+}

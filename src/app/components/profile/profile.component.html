@@ -1,0 +1,44 @@
+<br>
+<div class="setContainer mt-5">
+  <div class="container box1 mt-5">
+    <br><br>
+<!-- *** to be filled -->
+    <h1 *ngIf="username !== 'undefined undefined'; else tryThis">Hi {{username}}!!</h1>
+    <ng-template #tryThis>
+    </ng-template>
+  </div>
+  <div class="container text-center" id="heading">
+    <h1>MY WISHLIST</h1>
+  </div>
+  <div class="container" id="box2">
+    <br><br>
+    <div class="card m-3" id="card1" *ngIf="wishlistArr.length == 0">
+      <h2 class="text-center">There are no items in your wishlist</h2>
+    </div>
+<!-- *** to be filled -->
+    <div class="row">
+      <div class="col-4" *ngFor="let item of wishlistArr">
+
+        <div class="container" *ngIf="wishlistArr.length > 0">
+          <div class="card mb-4" style="width: 18rem;">
+            <img [src]="item.img" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h2 class="card-title text-center">{{item.name}}</h2>
+              <div class="card-text">
+                <div class="row">
+                  <div class="col-9">
+                    <h4>{{item.price}}&nbsp; only</h4>
+                  </div>
+                  <div class="col-3">
+                    <i class="fas fa-trash-alt" (click)="deleteItem(item.productId)" style="cursor: pointer;"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

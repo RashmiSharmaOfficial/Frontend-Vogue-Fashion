@@ -1,0 +1,55 @@
+.setContainer {
+  margin-top: 900px;
+  height: 100vh;
+  /* background: linear-gradient(rgb(255, 214, 221), maroon); */
+  /* border: 5px solid red; */
+}
+
+#heading h1 {
+  font-size: 2.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02rem;
+  margin-bottom: 90px;
+}
+
+.box1 h1 {
+  font-size: 1.3rem;
+}
+
+#box2 {
+  /* background-color: rgba(124, 8, 57, 0.671); */
+  background-color: rgb(243, 243, 243);
+  /* background-image: linear-gradient(
+      rgba(235, 235, 235, 0.157),
+      rgba(214, 255, 159, 0.246)
+    ),
+    url("https://images.pexels.com/photos/1036856/pexels-photo-1036856.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: auto; */
+}
+
+#card1 {
+  margin-top: 100px;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+#card1 h2 {
+  font-size: 27px;
+  color: rgb(56, 56, 56);
+}
+
+.card-title {
+  font-size: 1.7rem;
+}
+.card-text h4 {
+  font-size: 1.2rem;
+}
+.card-text {
+  color: maroon;
+  font-size: 1.2rem;
+}
+/* img {
+  height: 200px;
+  width: 170px;
+} */
