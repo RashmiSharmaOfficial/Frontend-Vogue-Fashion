@@ -1,5 +1,16 @@
 # Vogue
 
+Home Page
+
+https://user-images.githubusercontent.com/91252011/148563701-8bf8f27f-cef5-4600-95f1-7456c3e517bb.mp4
+
+Feature Page
+
+
+https://user-images.githubusercontent.com/91252011/148564924-77d858e4-7f8a-472e-89aa-a04564eb68e0.mp4
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.12.
 
 ## Development server
